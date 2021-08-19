@@ -4,7 +4,7 @@ Leave meetings on teams depending on number of attendees
 
 # How to use
 
-You can use this by pasting the code in your console while teams is running or you can paste the code into tampermonkey
+You can use this by copying the code from the `index.js` file and pasting it in your console while teams is running or you can paste the code into tampermonkey
 
 You must have the people panel open by clicking this button
 <br /> <br />
