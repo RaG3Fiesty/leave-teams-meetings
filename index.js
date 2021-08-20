@@ -24,7 +24,7 @@
 
         if (number) {
             peak < number ? (peak = number) : (peak = peak);
-            peak > 35 ? (threshold = 18) : (threshold = 10);
+            peak > 22 ? (threshold = 18) : (threshold = 12);
 
             console.log({ peak, threshold, number });
 
