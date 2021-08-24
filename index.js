@@ -32,6 +32,7 @@
                 document.getElementById("hangup-button").click();
                 console.log("clicked");
                 peak = 0;
+                threshold = 10;
             }
         }
     }, 5000);
