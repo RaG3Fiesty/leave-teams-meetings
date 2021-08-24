@@ -24,11 +24,16 @@
 
     if (number) {
       peak < number ? (peak = number) : (peak = peak);
-      peak > 50
-        ? (threshold = 30)
-        : peak > 22
-        ? (threshold = 18)
-        : (threshold = 12);
+
+      if (peak > 50) {
+        threshold = 30;
+      } else if (peak > 32) {
+        threshold = 22;
+      } else if (peak > 22) {
+        threshold = 18;
+      } else {
+        threshold = 12;
+      }
 
       console.log({ peak, threshold, number });
 
