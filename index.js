@@ -39,9 +39,16 @@
 
       if (number <= threshold) {
         document.getElementById("hangup-button").click();
-        console.log("clicked");
+        console.log("hung up");
         peak = 0;
         threshold = 10;
+      }
+    } else {
+      const roster_panel = document.getElementsByTagName("calling-roster")[0];
+
+      if (!roster_panel || roster_panel.className.includes("ng-hide")) {
+        document.getElementById("roster-button").click();
+        console.log("opened roster panel");
       }
     }
   }, 5000);
