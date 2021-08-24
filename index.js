@@ -32,8 +32,10 @@
           threshold = 22;
         } else if (peak > 22) {
           threshold = 18;
-        } else {
+        } else if (peak > 15) {
           threshold = 12;
+        } else {
+          threshold = 7;
         }
 
         console.log({ peak, threshold, number });
