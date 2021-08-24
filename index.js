@@ -47,7 +47,12 @@
       const roster_panel = document.getElementsByTagName("calling-roster")[0];
 
       if (!roster_panel || roster_panel.className.includes("ng-hide")) {
-        document.getElementById("roster-button").click();
+        const roster_button = document.getElementById("roster-button");
+
+        if (!roster_button.ariaLabel.includes("Hide participants")) {
+          roster_button.click();
+        }
+
         console.log("opened roster panel");
       }
     }
