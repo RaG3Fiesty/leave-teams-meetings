@@ -10,30 +10,34 @@
 // ==/UserScript==
 
 (function () {
-    "use strict";
-    let peak = 0;
+  "use strict";
+  let peak = 0;
 
-    setInterval(() => {
-        const number = parseInt(
-            document
-            .getElementsByClassName("roster-list-title")[1]
-            ?.ariaLabel?.split("Attendees ")[1]
-        );
+  setInterval(() => {
+    const number = parseInt(
+      document
+        .getElementsByClassName("roster-list-title")[1]
+        ?.ariaLabel?.split("Attendees ")[1]
+    );
 
-        let threshold = 10;
+    let threshold = 10;
 
-        if (number) {
-            peak < number ? (peak = number) : (peak = peak);
-            peak > 22 ? (threshold = 18) : (threshold = 12);
+    if (number) {
+      peak < number ? (peak = number) : (peak = peak);
+      peak > 50
+        ? (threshold = 30)
+        : peak > 22
+        ? (threshold = 18)
+        : (threshold = 12);
 
-            console.log({ peak, threshold, number });
+      console.log({ peak, threshold, number });
 
-            if (number <= threshold) {
-                document.getElementById("hangup-button").click();
-                console.log("clicked");
-                peak = 0;
-                threshold = 10;
-            }
-        }
-    }, 5000);
+      if (number <= threshold) {
+        document.getElementById("hangup-button").click();
+        console.log("clicked");
+        peak = 0;
+        threshold = 10;
+      }
+    }
+  }, 5000);
 })();
